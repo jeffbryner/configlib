@@ -5,7 +5,7 @@ simple python wrapper for .conf file get,set,update,delete operations.
 
 Use thusly: 
 
- ::
+```
 
     def initConfig():
         #initialize config options
@@ -17,3 +17,4 @@ Use thusly:
         parser.add_option("-c", dest='configfile' , default='', help="configuration file to use")
         (options,args) = parser.parse_args()
         initConfig()
+```
