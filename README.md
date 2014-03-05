@@ -5,7 +5,7 @@ simple python wrapper for .conf file get,set,update,delete operations.
 
 Use thusly: 
 
-::
+ ::
 
     def initConfig():
         #initialize config options
