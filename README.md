@@ -1,7 +1,7 @@
 configlib
 =========
 
-simple python wrapper for .conf file get,set,update,delete operations.
+simple python wrapper for .conf file get, set, delete operations.
 
 Use thusly: 
 
