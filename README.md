@@ -6,7 +6,7 @@ simple python wrapper for .conf file get,set,update,delete operations.
 Use thusly: 
 
 ```
-
+    from configlib import getConfig,OptionParser
     def initConfig():
         #initialize config options
         #sets defaults or overrides from config file.
