@@ -5,6 +5,14 @@ simple python wrapper for .conf file get, set, delete operations.
 
 Use thusly: 
 
+.conf file:
+```
+[options]
+somesetting=aDifferentValue
+
+```
+
+python code: 
 ```
     from configlib import getConfig,OptionParser
     def initConfig():
