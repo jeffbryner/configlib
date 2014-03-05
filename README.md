@@ -18,3 +18,5 @@ Use thusly:
         (options,args) = parser.parse_args()
         initConfig()
 ```
+
+pip install configlib
