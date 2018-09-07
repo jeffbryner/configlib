@@ -4,7 +4,7 @@ from distutils.core import setup
 setup(
     name = 'configlib',
     py_modules=['configlib'],
-    version = '1.0.0',
+    version = '1.0.1',
     description = 'wrapper for ConfigParser allowing for simple get,set,delete calls to set options.',
     author='Jeff Bryner',
     author_email='jeff@jeffbryner.com',
