@@ -2,7 +2,11 @@
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
-import ConfigParser
+try:
+    import ConfigParser
+except:
+    # python 3
+    from configparser import ConfigParser
 from optparse import OptionParser
 import os
 
@@ -13,9 +17,9 @@ def setConfig(option,value,configfile):
         configfp=open(configfile,'r')
         config.readfp(configfp)
         configfp.close()
-        
+
         config.set('options',option,value)
-        configfp=open(configfile,'w')        
+        configfp=open(configfile,'w')
         config.write(configfp)
         configfp.close()
 def delConfig(option,configfile):
@@ -25,9 +29,9 @@ def delConfig(option,configfile):
         configfp=open(configfile,'r')
         config.readfp(configfp)
         configfp.close()
-        
+
         config.remove_option('options',option)
-        configfp=open(configfile,'w')        
+        configfp=open(configfile,'w')
         config.write(configfp)
         configfp.close()
 def getConfig(optionname,thedefault,configfile):
@@ -35,7 +39,7 @@ def getConfig(optionname,thedefault,configfile):
        send 'thedefault' as the data class you want to get a string back
        i.e. 'True' will return a string
        True will return a bool
-       1 will return an int       
+       1 will return an int
     """
     #getConfig('something','adefaultvalue')
     retvalue=thedefault
