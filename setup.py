@@ -12,7 +12,7 @@ setup(
     tests_require=test_requirements,
     test_suite='tests',
     version = '1.0.1',
-    description = 'wrapper for ConfigParser allowing for simple get,set,delete calls to set options.',
+    description = 'wrapper for ConfigParser allowing for simple get,set,delete calls to set options from files, env variables, etc',
     author='Jeff Bryner',
     author_email='jeff@jeffbryner.com',
     url="https://github.com/jeffbryner/configlib"
