@@ -10,7 +10,7 @@ requirements = ['everett']
 test_requirements = ['pytest', 'pytest-watch', 'pytest-cov', 'flake8']
 
 setuptools.setup(
-    name = 'configlib_jeffbryner',
+    name = 'configlib',
     packages=setuptools.find_packages(),
     install_requires=requirements,
     tests_require=test_requirements,
