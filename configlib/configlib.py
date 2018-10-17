@@ -24,6 +24,7 @@ def getEverettManager(configfile):
     )
 
 
-def getConfig(optionname, default_value=None, configfile=None):
+
+def getConfig(optionname, default_value, configfile=None):
     config = getEverettManager(configfile)
     return config(optionname, namespace='options', default=default_value)
