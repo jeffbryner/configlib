@@ -24,7 +24,20 @@ def getEverettManager(configfile):
     )
 
 
-
 def getConfig(optionname, default_value, configfile=None):
+    original_type = type(default_value)
+    default_value = str(default_value)
     config = getEverettManager(configfile)
-    return config(optionname, namespace='options', default=default_value)
+    value = config(optionname, namespace='options', default=default_value)
+
+    # Cast as needed to cover strict types
+    if original_type==bool:
+        retvalue=bool(value)
+    elif original_type==int:
+        retvalue=int(value)
+    elif original_type==float:
+        retvalue=float(value)
+    else:
+        retvalue=value
+
+    return retvalue

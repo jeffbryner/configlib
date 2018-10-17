@@ -15,3 +15,9 @@ class TestConfigLib(object):
 
         o = OptionParser
         assert o is not None
+
+    def test_casting(self):
+        from configlib import getConfig
+
+        res = getConfig('mongoport', 8000, self.config_path)
+        assert isinstance(res, int)
