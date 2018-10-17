@@ -17,5 +17,11 @@ class TestConfigLib(object):
     def test_list_returns_as_string(self):
         from configlib import getConfig
         res = getConfig('foo', 'zab,za', self.config_path)
+        print(res)
         assert res == 'foo,bar'
         assert isinstance(res, str)
+
+    def test_failing_syslog_var(self):
+        from configlib import getConfig
+        res = getConfig('syslogport', 514, self.config_path)
+        assert res == 514
