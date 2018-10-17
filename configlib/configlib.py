@@ -30,6 +30,10 @@ def getConfig(optionname, default_value, configfile=None):
     config = getEverettManager(configfile)
     value = config(optionname, namespace='options', default=default_value)
 
+    if value.startswith('['):
+        value = eval(value)
+        original_type=type(list())
+
     # Cast as needed to cover strict types
     if original_type==bool:
         retvalue=bool(value)
@@ -37,7 +41,9 @@ def getConfig(optionname, default_value, configfile=None):
         retvalue=int(value)
     elif original_type==float:
         retvalue=float(value)
+    elif original_type==list:
+        retval=','.join(value)
     else:
-        retvalue=value
+        retval=value
 
-    return retvalue
+    return retval

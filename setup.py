@@ -11,8 +11,8 @@ setup(
     install_requires=requirements,
     tests_require=test_requirements,
     test_suite='tests',
-    version = '1.0.1',
-    description = 'wrapper for ConfigParser allowing for simple get,set,delete calls to set options.',
+    version = '2.0.1',
+    description = 'wrapper for ConfigParser allowing for simple get calls to set options.',
     author='Jeff Bryner',
     author_email='jeff@jeffbryner.com',
     url="https://github.com/jeffbryner/configlib"
