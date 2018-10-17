@@ -25,25 +25,23 @@ def getEverettManager(configfile):
 
 
 def getConfig(optionname, default_value, configfile=None):
-    original_type = type(default_value)
+    original_default = default_value
     default_value = str(default_value)
     config = getEverettManager(configfile)
     value = config(optionname, namespace='options', default=default_value)
 
     if value.startswith('['):
         value = eval(value)
-        original_type=type(list())
 
     # Cast as needed to cover strict types
-    if original_type==bool:
-        retvalue=bool(value)
-    elif original_type==int:
-        retvalue=int(value)
-    elif original_type==float:
-        retvalue=float(value)
-    elif original_type==list:
-        retval=','.join(value)
+    if isinstance(original_default, bool):
+        retval = bool(value)
+    elif isinstance(original_default, int):
+        retval = int(value)
+    elif isinstance(original_default, float):
+        retval = float(value)
+    elif isinstance(value, list):
+        retval = ','.join(value)
     else:
-        retval=value
-
+        retval = value
     return retval
