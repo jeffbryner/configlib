@@ -6,18 +6,16 @@ class TestConfigLib(object):
 
     def test_current_behavior(self):
         from configlib import getConfig
-
         res = getConfig('mongohost', 'defaultvalue', self.config_path)
         assert res == 'mongodb'
 
     def test_option_parser(self):
         from configlib import OptionParser
-
         o = OptionParser
         assert o is not None
 
-    def test_casting(self):
+    def test_list_returns_as_string(self):
         from configlib import getConfig
-
-        res = getConfig('mongoport', 8000, self.config_path)
-        assert isinstance(res, int)
+        res = getConfig('foo', 'zab,za', self.config_path)
+        assert res == 'foo,bar'
+        assert isinstance(res, str)
