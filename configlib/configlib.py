@@ -35,7 +35,7 @@ def getConfig(optionname, default_value, configfile=None):
 
     # Cast as needed to cover strict types
     if isinstance(original_default, bool):
-        retval = bool(value)
+        retval = value.lower() == 'true'
     elif isinstance(original_default, int):
         retval = int(value)
     elif isinstance(original_default, float):

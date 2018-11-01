@@ -25,3 +25,13 @@ class TestConfigLib(object):
         from configlib import getConfig
         res = getConfig('syslogport', 514, self.config_path)
         assert res == 514
+
+    def test_boolean_false_var(self):
+        from configlib import getConfig
+        res = getConfig('bar', False, self.config_path)
+        assert res is False
+
+    def test_boolean_true_var(self):
+        from configlib import getConfig
+        res = getConfig('bar', True, self.config_path)
+        assert res is True
