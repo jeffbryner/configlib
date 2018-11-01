@@ -15,7 +15,7 @@ setuptools.setup(
     install_requires=requirements,
     tests_require=test_requirements,
     test_suite='tests',
-    version = '2.0.1',
+    version = '2.0.2',
     description = 'wrapper for ConfigParser allowing for simple get calls to set options.',
     long_description=long_description,
     long_description_content_type="text/markdown",
