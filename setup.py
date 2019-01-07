@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 
-requirements = ['everett']
+requirements = ['everett==0.9']
 
 test_requirements = ['pytest', 'pytest-watch', 'pytest-cov', 'flake8']
 
@@ -15,7 +15,7 @@ setuptools.setup(
     install_requires=requirements,
     tests_require=test_requirements,
     test_suite='tests',
-    version = '2.0.2',
+    version = '2.0.3',
     description = 'wrapper for ConfigParser allowing for simple get calls to set options.',
     long_description=long_description,
     long_description_content_type="text/markdown",
